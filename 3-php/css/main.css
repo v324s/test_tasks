@@ -1,0 +1,23 @@
+body{
+    height: 100vh;
+    display: flex;
+}
+.body_section-url{
+    width: 500px;
+    margin: 10vh auto auto auto;
+    box-shadow: 0 0 5px 0 black;
+    padding: 1em;
+}
+.hidden{
+    opacity: 0;
+    display: none!important;
+    visibility: hidden;
+}
+.overflow-auto{
+    overflow: auto;
+}
+@media screen and (max-width: 524px) {
+    .body_section-url{
+        margin: 10vh 1vh auto 1vh;
+    }
+}

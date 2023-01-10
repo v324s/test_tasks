@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP developer</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="font/icofont.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body onload="getIssues()">
+    <header class="body_filter">
+      <section id="filter_menu" class="display-flex filter-form">
+        <div class="d-flex w-100">
+          <div class="m-auto">
+            <div>
+              <span>Статус: </span>
+              <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg status" onchange="filter__status=parseInt(this.value)">
+                <option value="" selected>Все</option>
+                <option value="1">Новый</option>
+                <option value="9">Подтвержденный</option>
+                <option value="3">Решено</option>
+                <option value="5">Закрытый</option>
+              </select>
+            </div>
+            <div>
+              <span>id автора: </span>
+              <div class="form-group mb-3">
+                <input type="text" class="form-control" id="filter__id-author" placeholder="363052" maxlength="10" onkeyup="filter__author_id= parseInt(this.value)" onchange="filter__author_id= parseInt(this.value)">
+              </div>
+            </div>
+            <div>
+              <span>id пользователя кому назначена: </span>
+              <div class="form-group mb-3">
+                <input type="text" class="form-control" id="filter__id-author" placeholder="107353" maxlength="10" onkeyup="filter__assigned_id= parseInt(this.value)" onchange="filter__assigned_id= parseInt(this.value)">
+              </div>
+            </div>
+            <button id="btn_filter-sort" type="button" class="btn btn-outline-light"><span class="icofont-filter"></span> Сортировать</button>
+          </div>
+          
+          <div class="m-auto">
+            <span>Поиск задачи по номеру: </span>
+              <div class="form-group mb-3">
+                <input type="text" class="form-control" id="filter__issue-id" placeholder="37679" maxlength="10" onkeyup="filter__issue_id = parseInt(this.value)" onchange="filter__issue_id = parseInt(this.value)">
+              </div>
+              <button id="btn_filter-search-issue" type="button" class="btn btn-outline-light"><span class="icofont-search-2"></span> Поиск</button>
+          </div>
+
+          <div class="m-auto">
+            <div>
+              <span>Отображать на странице: </span>
+            <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg list" onchange="NUMBER_TASK_ON_PAGE=parseInt(this.value)">
+              <option value="5">5 записей</option>
+              <option value="10">10 записей</option>
+              <option value="15">15 записей</option>
+              <option value="20" selected>20 записей</option>
+              <option value="25">25 записей</option>
+            </select>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      <footer id="btn_toggle-filter" class="filter_btn">
+        <i class="icofont-filter filter_btn_ico"></i>
+      </footer>
+    </header>
+
+    <section class="body_section-url">
+      <h1 class="display-6 text-center">Redmine</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">№ задачи</th>
+            <th scope="col">Проект</th>
+            <th scope="col">Кому назначена</th>
+            <th scope="col">Название задачи с ссылкой на задачу в redmine</th>
+            <th scope="col">Дата начала</th>
+            <th scope="col">Оценка задачи в часах</th>
+            <th scope="col">Затраченное время</th>
+            <th scope="col">Коэффициент эффективности</th>
+          </tr>
+          <tr id="table_loading">
+            <td colspan="9">
+              <div class="text-center">
+                <div class="spinner-border" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+            </td>
+        </thead>
+        <tbody id="tbody_issues">
+          </tr>
+          </div>
+        </tbody>
+      </table>
+      <footer class="body_section-url__navigation">
+        <div class="m-auto ms-0">
+          <button id="btn_prev_page" type="button" class="btn btn-outline-primary"><span class="icofont-long-arrow-left"></span> Предыдущая страница</button>
+        </div>
+        <div class="m-auto text-center">
+          <div>Текущая страница</div>
+          <div id="number_page"></div>
+        </div>
+        <div class="m-auto me-0">
+          <button id="btn_next_page" type="button" class="btn btn-outline-primary">Следующая страница <span class="icofont-long-arrow-right"></span></button>
+        </div>
+      </footer>
+    </section>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="js/getData.js"></script>
+</body>
+</html>

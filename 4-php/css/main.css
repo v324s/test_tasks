@@ -1,0 +1,15 @@
+body{
+    height: 100vh;
+    display: flex;
+}
+.body_section-signUp{
+    width: 500px;
+    margin: 10vh auto auto auto;
+    box-shadow: 0 0 5px 0 black;
+    padding: 1em;
+}
+.hidden{
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+}

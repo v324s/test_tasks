@@ -1,0 +1,183 @@
+@font-face {
+	font-family: 'Jost'; 
+    font-weight: 400;
+	src: local('Jost'),
+		url('../fonts/Jost-Regular.ttf'); 
+}
+@font-face {
+	font-family: 'Jost'; 
+    font-weight: 100;
+	src: local('Jost Thin'),
+		url('../fonts/Jost-Thin.ttf'); 
+}
+@font-face {
+	font-family: 'Jost'; 
+    font-weight: 300;
+	src: local('Jost Light'),
+		url('../fonts/Jost-Light.ttf'); 
+}
+@font-face {
+	font-family: 'Jost'; 
+    font-weight: 700;
+	src: local('Jost Bold'),
+		url('../fonts/Jost-Bold.ttf'); 
+}
+:root{
+    --blue: #00b8ff;
+    --grey: #202020;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/background.png');
+    font-family: 'Jost';
+}
+.flex{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.flex_form{
+    margin: 5vh auto auto;
+    padding: 15px;
+    width: 400px;
+    box-shadow: 0px 0px 4px 0px black;
+    background-color: white;
+}
+h3{
+    padding: 0;
+    margin: 0;
+    display: block;
+    font-size: 1.8em;
+    font-weight: 400;
+}
+.align-center{
+    text-align: center;
+}
+.leftMenu{
+    margin: 0;
+    padding: 10px;
+    min-width: 100px;
+    background-color: var(--grey);
+    font-size: 1.2em;
+}
+a, a:hover, a:focus{
+    color: black;
+    text-decoration: none;
+}
+.leftMenu_link{
+    color: white;
+}
+.leftMenu_link:hover, .leftMenu_link:focus{
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+li{
+    display: block;
+}
+.leftMenu_ul{
+    text-align: center;
+}
+.content{
+    width: calc(100% - 120px);
+    background-color: white;
+}
+.content_data{
+    padding: 1%;
+    font-size: 1.2em;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.content_header{
+    margin: 0;
+    padding: 0;
+}
+.content_header_h4{
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 400;
+    background-color: var(--blue);
+}
+.notification{
+    position: absolute;
+    background-color: #000000dd;
+    z-index: 100;
+
+    display: none;
+}
+.zIndex-child{
+    z-index: 1;
+}
+.branch-control{
+    width: 80px;
+    text-align: center;
+    display: flex;
+}
+.mg-auto{
+    margin: auto;
+}
+.but-add{
+    background-image: url(../img/add.svg);
+}
+.but-del{
+    background-image: url(../img/delete.svg);
+}
+.but-edit{
+    background-image: url(../img/edit.svg);
+}
+.but-addMainBranch{
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 3px;
+    font-size: 1em;
+    padding: 6px 7px;
+    margin-left: 3px;
+    transition: .3s;
+}
+.but-addMainBranch:hover{
+    cursor: pointer;
+    background-color: var(--grey);
+    transition: .3s;
+    color: white;
+}
+.forma{
+    display: none;
+}
+.button-ico{
+    background-position: center;
+    border: none;
+    background-color: white;
+    height: 22px;
+    width: 22px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.branch-info{
+    width: calc(100% - 60px);
+    background-color: #e1e1e1;
+    padding: 0 10px;
+}
+.item-row{
+    padding: 2px 0;
+    height: auto;
+}
+.branch-info_decription{
+    background-color: var(--blue);
+    display: none;
+}
+.cPointer:hover{
+    cursor: pointer;
+}
